@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'sing_up.dart';
+import 'const.dart';
 
 
 
@@ -18,10 +20,6 @@ class MyApp extends StatelessWidget {
 
   //int _controller;
 
-
-  static const color1 =  Color(0xff105652);
-  static const color2 =  Color(0xffDCEDC1);
-
   @override
   Widget build(BuildContext context) {
 
@@ -34,7 +32,7 @@ class MyApp extends StatelessWidget {
                 width: 400,
                 height: 400,
                 decoration: const BoxDecoration(
-                  color: color1,
+                  color: kupperColor,
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -46,7 +44,7 @@ class MyApp extends StatelessWidget {
                     Text('Bariwala',style: TextStyle(
                       fontWeight: FontWeight.w800,
                       fontFamily: 'BauhausBold',
-                      color: color2,
+                      color: klowerColor,
                       fontSize: 40
                     ),
                     ),
@@ -57,7 +55,7 @@ class MyApp extends StatelessWidget {
                       height: 300,
                       width: 200,
                       child: SvgPicture.asset('assets/svg/new.svg',
-                        color: color2,
+                        color: klowerColor,
                       ),
                     ),
 
@@ -68,7 +66,7 @@ class MyApp extends StatelessWidget {
                 width: 400,
                 height: 380,
                 decoration: const BoxDecoration(
-                  color: color2,
+                  color: klowerColor,
                 ),
 
                 child:Column(
@@ -90,8 +88,8 @@ class MyApp extends StatelessWidget {
                       width: 120,
                       child: Material(
                         borderRadius: BorderRadius.circular(20.0),
-                        shadowColor: color1,
-                        color: color1,
+                        shadowColor: kupperColor,
+                        color: kupperColor,
                         elevation: 5.0,
                         child: GestureDetector(
                           onTap: (){
@@ -136,9 +134,12 @@ class MyApp extends StatelessWidget {
                         ),
                         ),
                         InkWell(
-                          onTap: (){},
+                          onTap: (){
 
-                          child: const Text("Sign in",
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>SingUp()));
+                          },
+
+                          child: const Text("Sign Up",
                             style: TextStyle(
                                 color: Colors.orange,
                                 fontSize: 18,
